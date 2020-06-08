@@ -1,0 +1,11 @@
+class Solution:   #用时和内存消耗分别击败8.33%和6.25%
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        half=target//2
+        i=0
+        while numbers[i]<=half:
+            another=target-numbers[i]
+            if another==numbers[i] and another==numbers[i+1]:   #如果两个数相等
+                return [i+1,i+2]
+            elif another in numbers:
+                return [i+1,numbers.index(another)+1]
+            i+=1      
