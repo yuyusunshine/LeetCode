@@ -1,0 +1,11 @@
+class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        maxnum=max(arr)
+        for i in range(len(arr)-1):
+            if arr[i]!=maxnum:
+                arr[i]=maxnum
+            else:
+                maxnum=max(arr[i+1:])
+                arr[i]=maxnum
+        arr[-1]=-1
+        return arr
