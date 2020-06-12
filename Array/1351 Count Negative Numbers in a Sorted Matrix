@@ -1,0 +1,12 @@
+class Solution:  #用时击败14.28%，内存击败100%
+    def countNegatives(self, grid: List[List[int]]) -> int:
+        result=0
+        for i in range(len(grid)):
+            j=len(grid[0])-1
+            while j>=0:
+                if grid[i][j]>=0:
+                    break
+                else:
+                    result+=1
+                    j=j-1
+        return result
